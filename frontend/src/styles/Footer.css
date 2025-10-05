@@ -1,0 +1,179 @@
+.footer-section {
+    background: linear-gradient(to top, var(--bg-secondary) 0%, var(--bg) 100%);
+    color: var(--text);
+    border-top: 3px solid var(--border);
+    @apply pt-12 pb-8 transition-colors;
+    position: relative;
+    animation: fadeInUp 0.6s ease;
+    box-shadow: 0 -4px 20px rgba(8, 145, 178, 0.08);
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-medical);
+    animation: shimmer 3s ease infinite;
+}
+
+.footer-section a {
+    color: var(--muted-text);
+    @apply transition-colors;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.4s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+.footer-section a:hover::after {
+    width: 100%;
+}
+
+.footer-section .widget-title {
+    font-weight: 700;
+    @apply mb-4 text-base;
+    color: var(--text);
+    position: relative;
+    padding-bottom: 0.5rem;
+    animation: slideIn 0.5s ease;
+}
+
+.footer-section .widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-medical);
+    border-radius: 2px;
+    animation: slideInRight 0.6s ease;
+}
+
+.footer-section address,
+.footer-section p {
+    margin-bottom: 0.5rem;
+    color: var(--muted-text);
+    line-height: 1.6;
+}
+
+.footer-section .form-control {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+    @apply rounded-md;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.75rem 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.footer-section .form-control:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-section .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+    outline: none;
+    transform: translateY(-2px) scale(1.01);
+}
+
+.footer-section .form-control::placeholder {
+    color: var(--muted-text);
+    transition: all 0.3s ease;
+}
+
+.footer-section .form-control:focus::placeholder {
+    opacity: 0.4;
+    transform: translateX(5px);
+}
+
+.footer-section .btn-primary {
+    background: var(--gradient-medical);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    @apply rounded-md;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(8, 145, 178, 0.3);
+    animation: gradientShift 3s ease infinite;
+    letter-spacing: 0.5px;
+}
+
+.footer-section .btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(8, 145, 178, 0.4);
+    animation: medicalPulse 1s ease-in-out infinite;
+}
+
+.footer-section .social-media-wrapper a {
+    color: var(--social-media);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-section .social-media-wrapper a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-medical);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.footer-section .social-media-wrapper a svg {
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.footer-section .social-media-wrapper a:hover {
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 8px 24px rgba(8, 145, 178, 0.3);
+    animation: bounce 0.6s ease;
+}
+
+.footer-section .social-media-wrapper a:hover::before {
+    opacity: 1;
+}
+
+.footer-section .social-media-wrapper a:hover svg {
+    color: white;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
